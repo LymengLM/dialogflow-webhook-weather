@@ -56,7 +56,6 @@ def processRequest(req):
   "source": "heruku.com",
   "payload": {
     "google": {
-      "expectUserResponse": true,
       "richResponse": {
         "items": [
           {
@@ -67,22 +66,6 @@ def processRequest(req):
         ]
       }
     },
-  },
-  "outputContexts": [
-    {
-      "name": "projects/project-id/agent/sessions/session-id/contexts/context-name",
-      "lifespanCount": 5,
-      "parameters": {
-        "param-name": "param-value"
-      }
-    }
-  ],
-  "followupEventInput": {
-    "name": "event name",
-    "languageCode": "en-US",
-    "parameters": {
-      "param-name": "param-value"
-    }
   }
 }
 
