@@ -54,6 +54,41 @@ def processRequest(req):
         "displayText": speech,
         "source": "dialogflow-weather-by-satheshrgs"
         }
+{
+  "fulfillmentText": speech,
+  "fulfillmentMessages": [],
+  "source": "heruku.com",
+  "payload": {
+    "google": {
+      "expectUserResponse": true,
+      "richResponse": {
+        "items": [
+          {
+            "simpleResponse": {
+              "textToSpeech": speech
+            }
+          }
+        ]
+      }
+    },
+  },
+  "outputContexts": [
+    {
+      "name": "projects/project-id/agent/sessions/session-id/contexts/context-name",
+      "lifespanCount": 5,
+      "parameters": {
+        "param-name": "param-value"
+      }
+    }
+  ],
+  "followupEventInput": {
+    "name": "event name",
+    "languageCode": "en-US",
+    "parameters": {
+      "param-name": "param-value"
+    }
+  }
+}
     
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
