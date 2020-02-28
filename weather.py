@@ -4,7 +4,8 @@ import pyowm
 import os
 
 app = Flask(__name__)
-owmapikey=os.environ.get('OWMApiKey') #or provide your key here
+# owmapikey=os.environ.get('OWMApiKey') #or provide your key here
+owmapikey = '3dc52be21b5bdec01a030445f8f0f7dc'
 owm = pyowm.OWM(owmapikey)
 
 #geting and sending response to dialogflow
@@ -50,11 +51,6 @@ def processRequest(req):
     speech = "Today the weather in " + city + ": \n" + "Temperature in Celsius:\nMax temp :"+temp_max_celsius+".\nMin Temp :"+temp_min_celsius+".\nTemperature in Fahrenheit:\nMax temp :"+temp_max_fahrenheit+".\nMin Temp :"+temp_min_fahrenheit+".\nHumidity :"+humidity+".\nWind Speed :"+wind_speed+"\nLatitude :"+lat+".\n  Longitude :"+lon
     
     return {
-        "speech": speech,
-        "displayText": speech,
-        "source": "dialogflow-weather-by-satheshrgs"
-        }
-{
   "fulfillmentText": speech,
   "fulfillmentMessages": [],
   "source": "heruku.com",
@@ -89,6 +85,12 @@ def processRequest(req):
     }
   }
 }
+
+# {
+#         "speech": speech,
+#         "displayText": speech,
+#         "source": "dialogflow-weather-by-satheshrgs"
+#         }
     
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
